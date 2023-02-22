@@ -1,0 +1,15 @@
+# smart_screen
+Magic Mirror like program but designed in Python as opposed to JavaScript.
+
+main python program reads JSON config file to include modules to load and location on screen, much like Magic Mirror.
+
+module ideas:
+  clock,
+  calendar,
+  weather,
+  MOTD,
+  news,
+  picture rotater,
+  wallpaper
+
+Need error checking of main program and each module.
