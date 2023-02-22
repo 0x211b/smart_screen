@@ -1,16 +1,24 @@
-# This is a sample Python script.
+# PYTHON SMART MIRROR
+# AUTHOR:   0x211b
+# 2/22/2023
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# https://github.com/0x211b/smart_screen/blob/master/README.md
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import json
 
 
-# Press the green button in the gutter to run the script.
+
+
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    json_file = open("config.json", "r")                            # open config.json file
+    config_dict = json.load(json_file)                              # load json into dictionary
+    json_file.close()                                               # close file
+
+    for i in config_dict:                                           # test success of json variables
+        print(i)
+
+    print ("\n")
+    print(config_dict)
