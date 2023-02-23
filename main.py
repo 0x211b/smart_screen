@@ -11,14 +11,24 @@ import json
 
 
 
+
+
+def get_config():
+
+    try:                                                                # try successful operation below
+            json_file = open("config.json", "r")                            # open config.json file
+            global config_dict
+            config_dict = json.load(json_file)                              # load json into dictionary
+            json_file.close()                                               # close file
+
+    except:                                                             # if operation fails, print message and quit
+            print("\n**  An error occurred in loading 'config.json'  **\nPlease verify proper formatting of data in the file.\n")
+            quit()                                                          # do not proceed
+
+
+
+
 if __name__ == '__main__':
-
-    json_file = open("config.json", "r")                            # open config.json file
-    config_dict = json.load(json_file)                              # load json into dictionary
-    json_file.close()                                               # close file
-
-    for i in config_dict:                                           # test success of json variables
-        print(i)
-
-    print ("\n")
-    print(config_dict)
+    get_config()
+    if "footer" in config_dict:
+        print("FOOTER")
