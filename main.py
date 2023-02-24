@@ -8,9 +8,13 @@ import json
 
 
 
+# Variable declarations
 
-
-
+top_list = []
+mid_list = []
+btm_list = []
+header = ""
+footer = ""
 
 
 def get_config():
@@ -30,5 +34,33 @@ def get_config():
 
 if __name__ == '__main__':
     get_config()
-    if "footer" in config_dict:
-        print("FOOTER")
+
+#   get list of module names for each row (1 for header and footer, list for top,mid and bottom)
+    for module in config_dict["module"]:
+        if "top" in module["position"]:
+            top_list.append(module["name"])             # add name of top row modules
+        elif "mid" in module["position"]:
+            mid_list.append(module["name"])             # add name of mid row modules
+        elif "bottom" in module["position"]:
+            btm_list.append(module["name"])             # add name of bottom row modules
+        elif "header" in module["position"]:
+            header = module["name"]                     # add name of header module
+        elif "footer" in module["position"]:
+            footer = module["name"]                     # add name of footer module
+
+#   Error check for more than 3 modules per row
+    if len(top_list) > 3:
+        print("\nError!  More than three top row modules.\n")
+        quit()                                                          # quit with error message
+    elif len(mid_list) > 3:
+        print("\nError!  More than three middle row modules.\n")
+        quit()                                                          # quit with error message
+    elif len(btm_list) > 3:
+        print("\nError!  More than bottom top row modules.\n")
+        quit()                                                          # quit with error message
+
+    print(header)
+    print(top_list)
+    print(mid_list)
+    print(btm_list)
+    print(footer)

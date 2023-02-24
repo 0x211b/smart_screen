@@ -13,3 +13,6 @@ module ideas:
   wallpaper
 
 Need error checking of main program and each module.
+
+Would like to have hyperlinks in modules to expand info (with a timout feature to drop back to main)
+
