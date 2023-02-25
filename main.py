@@ -16,10 +16,11 @@ btm_list = []
 header = ""
 footer = ""
 
+modules = []
 
 def get_config():
 
-    try:                                                                # try successful operation below
+    try:                                                                    # try successful operation below
             json_file = open("config.json", "r")                            # open config.json file
             global config_dict
             config_dict = json.load(json_file)                              # load json into dictionary
@@ -33,20 +34,22 @@ def get_config():
 
 
 if __name__ == '__main__':
-    get_config()
+    get_config()                                        # load config JSON file into dictionary
 
+#   ***   GET POSITIONS OF MODULES   ***
 #   get list of module names for each row (1 for header and footer, list for top,mid and bottom)
-    for module in config_dict["module"]:
+    modules = config_dict["module"]
+    for module in modules:
         if "top" in module["position"]:
-            top_list.append(module["name"])             # add name of top row modules
+            top_list.append(module)                         # add name of top row modules
         elif "mid" in module["position"]:
-            mid_list.append(module["name"])             # add name of mid row modules
+            mid_list.append(module)                         # add name of mid row modules
         elif "bottom" in module["position"]:
-            btm_list.append(module["name"])             # add name of bottom row modules
+            btm_list.append(module)                         # add name of bottom row modules
         elif "header" in module["position"]:
-            header = module["name"]                     # add name of header module
+            header = module                                 # add name of header module
         elif "footer" in module["position"]:
-            footer = module["name"]                     # add name of footer module
+            footer = module                                 # add name of footer module
 
 #   Error check for more than 3 modules per row
     if len(top_list) > 3:

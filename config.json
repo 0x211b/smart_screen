@@ -4,7 +4,9 @@
     {"name": "clock", "position": "top-right", "frequency": 1},
     {"name": "motd", "position":  "header", "frequency":  120},
     {"name": "picture_rotate", "position":  "top-left", "frequency":  30},
-    {"name": "news", "position": "middle-center", "frequency": 1}
+    {"name": "news", "position": "middle-center", "frequency": 1},
+    {"name": "dad-joke", "position": "bottom-center", "frequency": 1},
+    {"name": "quote", "position": "footer", "frequency": 1}
   ],
   "color": "#000000"
 }

@@ -36,4 +36,7 @@ example of left and right (no center):
 +--------------------------------------------------------+
 <50%,50%>
 
+frequency should be one of the following: 1,2,3,4,5,10,20,30,60,120,1440
+this sets how often to run the module in number of minutes.   the first 8 options will divide into an hour evenly, the others are 1 hour, 2 hours, and 24 hours.
+
 
